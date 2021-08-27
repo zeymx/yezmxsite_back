@@ -41,7 +41,7 @@ if os.path.isfile(dotenv_file):
     load_dotenv(dotenv_file)
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ('secret')
+SECRET_KEY = os.environ['secret']
 
 # Application definition
 
@@ -106,7 +106,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'yezmxsite',
         'USER': 'postgres',
-        'PASSWORD': os.environ('password'),
+        'PASSWORD': os.environ['password'],
         'HOST': 'localhost',
         'PORT': '5432'
     }
