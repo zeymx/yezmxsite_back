@@ -1,0 +1,1 @@
+web: gunicorn yezmxsite.wsgi --log-file
