@@ -1,1 +1,1 @@
-web: gunicorn yezmxsite.wsgi --log-file
+web: gunicorn yezmxsite.wsgi
