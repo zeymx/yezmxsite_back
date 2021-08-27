@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import credentials
+from dotenv import load_dotenv
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,9 +20,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = credentials.secret
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -37,6 +35,13 @@ SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 
 CSRF_COOKIE_SECURE = True
+
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    load_dotenv(dotenv_file)
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = os.environ('secret')
 
 # Application definition
 
@@ -101,7 +106,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'yezmxsite',
         'USER': 'postgres',
-        'PASSWORD': credentials.password,
+        'PASSWORD': os.environ('password'),
         'HOST': 'localhost',
         'PORT': '5432'
     }
