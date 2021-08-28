@@ -1,1 +1,1 @@
-web: bin/start-nginx bin/start-pgbouncer gunicorn yezmxsite.wsgi
+web: bin/start-nginx bin/start-pgbouncer gunicorn -c config/gunicorn.conf.py yezmxsite.wsgi
