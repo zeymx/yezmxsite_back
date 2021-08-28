@@ -6,5 +6,5 @@ from rest_framework.response import Response
 class ProjectViewSet(viewsets.ViewSet):
     def list(self, request):
         queryset = Project.objects.all()
-        serializer = ProjectSerializer(queryset, many=True)
+        serializer = ProjectSerializer(queryset, context={"request": request}, many=True)
         return Response(serializer.data)
