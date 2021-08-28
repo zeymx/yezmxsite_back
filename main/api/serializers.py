@@ -7,7 +7,7 @@ class ProjectSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Project
-        fields = ('headline', 'link', 'thumbnail', 'color')
+        fields = ('id', 'headline', 'link', 'thumbnail', 'color')
 
     def get_image_url(self, obj):
         request = self.context.get('request')
