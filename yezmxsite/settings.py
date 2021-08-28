@@ -228,8 +228,8 @@ CORS_ALLOW_HEADERS = (
 
 # AWS 
 
-AWS_ACCESS_KEY_ID = os.environ('AWS_ACCESS_KEY')
-AWS_SECRET_ACCESS_KEY = os.environ('AWS_SECRET_ACCESS_KEY')
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 AWS_STORAGE_BUCKET_NAME = 'yezmxsite-crm1-bucket'
 
 AWS_S3_ENDPOINT_URL = 'https://storage.yandexcloud.net'
